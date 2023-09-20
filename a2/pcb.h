@@ -25,4 +25,36 @@ class pcb {
     // max and min duration for a process in our system.
     static constexpr osp2023::time_type MAX_DURATION = 100;
     static constexpr osp2023::time_type MIN_DURATION = 10;
+
+    // Create the constrructor here.. 
+
+    pcb(osp2023::id_type pid, osp2023::time_type t_time) 
+    : id(pid), total_time(t_time), time_used(0), total_wait_time(0) {}
+
+    // Create the getters and setters
+
+    osp2023::id_type get_process_id() const {
+        return id;
+    }
+
+    osp2023::time_type get_total_burst_time() const {
+        return total_time;
+    }
+
+    osp2023::time_type get_consumed_used() const {
+        return time_used;
+    }
+
+    void increment_time_used(osp2023::time_type increment) {
+        time_used += increment;
+    }
+
+    osp2023::time_type get_total_wait_time() const {
+        return total_wait_time;
+    }
+
+    void increment_wait_time(osp2023::time_type increment) {
+        total_wait_time += increment;
+    }
+
 };
